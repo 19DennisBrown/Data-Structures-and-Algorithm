@@ -28,13 +28,13 @@ def fibonacci(first, second):
   if count <= 10:
     next = first + second
     print(next)
-    second = first
-    first = next
+    first = second
+    second = next
     count += 1
     fibonacci(first, second)
   else:
      return
-fibonacci(1, 0)
+fibonacci(0, 1)
     
 # FINDING THE nth FIBONACCI NUMBER USING FOR RECURSION
 def F(n):
