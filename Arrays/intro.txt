@@ -1,0 +1,7 @@
+Arrays
+An array is a data structure used to store multiple elements.
+
+Arrays are used by many algorithms.
+
+example: my_array = [7, 12, 9, 4, 11]
+printing exact index : print( my_array[0] )
