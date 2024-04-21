@@ -14,6 +14,7 @@ for i in range(length-1):
   for j in range(i+1, length):
     if my_array[j] < my_array[min_index]:
       min_index = j
-  min_value = my_array.pop(min_index)
-  my_array.insert(i, min_value)
+  my_array[i], my_array[min_index] = my_array[min_index], my_array[i]
+  # min_value = my_array.pop(min_index)
+  # my_array.insert(i, min_value)
 print("Selection sorted array : ", my_array)
