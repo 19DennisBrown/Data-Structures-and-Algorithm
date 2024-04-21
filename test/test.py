@@ -1,38 +1,15 @@
 
-first = 0
-second = 1
+# Selection sort
 
-print(first)
-print(second)
+stats = [1,12,32,45,7,4,3,5,7,8,9,3,23,12]
 
-for i in range(20):
-  next = first + second
-  print(next)
-  first = second
-  second = next
+len = len(stats)
 
-print(0)
-print(1)
-count = 2
-
-def Fibonacci(first, second):
-  global count
-
-  if count <= 20:
-    next = first + second
-    print(next)
-    first = second
-    second = next
-    count += 1
-    Fibonacci(first, second)
-  else:
-    return
-print(Fibonacci(0,1))
-
-def Fibo(n):
-  if n <= 1:
-    return n
-  else:
-    return Fibo(n-1)+Fibo(n-2)
-  
-print("20th Fibonacci number is : ", Fibo(20))
+for i in range(len-1):
+  min_index = i
+  for j in range(i+1, len):
+    if stats[j] < stats[min_index]:
+      min_index = j
+  min_value = stats.pop(min_index)
+  stats.insert(i, min_value)
+print("Selection sorted array : ", stats)
