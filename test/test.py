@@ -1,15 +1,17 @@
 
-array = [64, 34, 25, 12, 22, 11, 90, 5]
-size = len(array)
+array = [64, 34, 25, 12, 22, 112, 90, 5]
 
-for i in range(1,size):
+n = len(array)
+
+for i in range(1, n):
   insert_index = i
-  current_val = array[i]
+  insert_value = array[i]
+
   for j in range(i-1, -1, -1):
-    if array[j] > current_val:
-      array[j+1] = array[j]
-      current_val = j
+    if array[j] > insert_value:
+      array[j + 1] = array[j]
+      insert_index = j
     else:
       break
-  array[insert_index] = current_val
-print("Insertion sorted array : ", array)
+  array[insert_index] = insert_value
+print("Sorted array : ", array)
