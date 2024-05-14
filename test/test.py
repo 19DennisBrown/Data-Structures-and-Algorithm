@@ -1,4 +1,7 @@
 arr = [2,4,6,8,12,32,45,66,434,12]
+
+input = int(input("Add new index value : "))
+arr.append(input)
 n = len(arr)
 for i in range(n-1):
   index = i
