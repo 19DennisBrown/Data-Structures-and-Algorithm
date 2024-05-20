@@ -1,19 +1,19 @@
 
 
-def countSort(arr):
-  max_val = max(arr)
+def countingSort(array):
+  max_val = max(array)
   count = [0]*(max_val+1)
-
-  while len(arr):
-    num = arr.pop(0)
-    count[num]+=1
+  
+  while len(array)>0:
+    num = array.pop(0)
+    count[num] += 1
   for i in range(len(count)):
     while count[i]>0:
-      arr.append(i)
+      array.append(i)
       count[i]-=1
-  return arr
+  return array
 
-unsortedArr = [4,2,21,6,30,3,1,66,5]
-sortedArr = countSort(unsortedArr)
+givenArray = [1,4,5,43,4,6,6,77,88,23]
+sortedArray = countingSort(givenArray)
 
-print(f"This is the new array : {sortedArr}")
+print(f"Counting sort resulted in the provided array : {sortedArray}")
