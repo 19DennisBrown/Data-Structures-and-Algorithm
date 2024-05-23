@@ -16,3 +16,6 @@ ____Linear search implementation__
 3. A loop that goes through the array from start to end.
 4. An if-statement that compares the current value with the target value, and returns the current index if the target value id found.
 5. After the loop, return -1, because at this point we know the target value has not been found.
+
+__TIME COMPLEXITY
+...O(n)
