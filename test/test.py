@@ -1,20 +1,25 @@
+class SinglyNode:
+  def __init__(self, data):
+    self.data  = data
+    self.next = None
 
-def Binary(arr, targetVal):
-  left = 0
-  right = len(arr)-1
-  while left <= right:
-    mid = (left + right)//2
-    if arr[mid]== targetVal:
-      return mid
-    if arr[mid]< targetVal:
-      left = mid + 1
-    else:
-      right = mid -1
-  return -1
-myArray = [0,3,5,5,7,8,11,13,15,23,45,56]
-myTarget = 15
-result = Binary(myArray, myTarget)
-if result != -1:
-  print(f"Target spotted {myArray.index(myTarget)}")
-else:
-  print(f"Target not spotted")
+firstNode = SinglyNode(2)
+secondNode = SinglyNode(3)
+thirdNode = SinglyNode(7)
+fourthNode = SinglyNode(6)
+
+firstNode.next = secondNode
+secondNode.next = thirdNode
+thirdNode.next = fourthNode
+fourthNode.next = firstNode
+
+thisNode = firstNode
+startNode = firstNode
+
+print(thisNode.data, end="->")
+thisNode = thisNode.next
+
+while thisNode != startNode:
+  print(thisNode.data, end="->")
+  thisNode = thisNode.next
+print("...")
