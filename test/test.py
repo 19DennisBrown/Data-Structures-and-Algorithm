@@ -1,25 +1,32 @@
-class SinglyNode:
+class Operations:
   def __init__(self, data):
-    self.data  = data
+    self.data = data
     self.next = None
+def traverse(head):
+  currentNode = head
+  while currentNode:
+    print(currentNode.data, end="->")
+    currentNode = currentNode.next
+  print("null")
+def lowestValue(head):
+  minVal = head.data
+  currentNode = head.next
+  while currentNode:
+    if currentNode.data  < minVal:
+      minVal = currentNode.data
+    currentNode = currentNode.data
+  return minVal
 
-firstNode = SinglyNode(2)
-secondNode = SinglyNode(3)
-thirdNode = SinglyNode(7)
-fourthNode = SinglyNode(6)
+node1 = Operations(3)
+node2 = Operations(35)
+node3 = Operations(333)
+node4 = Operations(32)
 
-firstNode.next = secondNode
-secondNode.next = thirdNode
-thirdNode.next = fourthNode
-fourthNode.next = firstNode
+node1.next = node2
+node2.next = node3
+node3.next = node4
 
-thisNode = firstNode
-startNode = firstNode
+# currentNode = node1
 
-print(thisNode.data, end="->")
-thisNode = thisNode.next
-
-while thisNode != startNode:
-  print(thisNode.data, end="->")
-  thisNode = thisNode.next
-print("...")
+traverse(node1)
+print(f"The lowest value is {lowestValue(node1)}")
