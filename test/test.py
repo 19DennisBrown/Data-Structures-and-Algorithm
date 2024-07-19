@@ -9,31 +9,37 @@ def traverseAndPrint(head):
   while currentNode:
     print(currentNode.data, end="->")
     currentNode = currentNode.next
-  print("null")
+  print(f"null")
 
-def deleteNode(head, targetNode):
-  if head == targetNode:
-    return head.next
+def addNew(head, newNode, position):
+  if position == 1:
+    newNode.next = head
+    return newNode
   currentNode = head
-  while currentNode.next and currentNode.next != targetNode:
+
+  for _ in range(position-2):
+    if currentNode is None:
+      break
     currentNode = currentNode.next
-  if currentNode.next is None:
-    return head
-  currentNode.next = currentNode.next.next
   
+  newNode.next = currentNode.next
+  currentNode.next = newNode
   return head
 
-node1 = Node(23)
-node2 = Node(12)
-node3 = Node(18)
+node1 = Node(5)
+node2 = Node(6)
 
 node1.next = node2
-node2.next = node3
 
-print(f"Before deleting {node2}")
+# Legacy list
+print(f"Legacy list")
 traverseAndPrint(node1)
 
-print(f"\n After deleting {node2}")
-# deleting
-deleteNode(node1, node2)
+# Adding new node
+node3 = Node(43)
+posn = 3
+node1 = addNew(node1, node3, posn)
+
+# Updated list
+print(f"Updated list")
 traverseAndPrint(node1)
