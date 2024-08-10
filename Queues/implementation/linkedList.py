@@ -1,70 +1,63 @@
 
-
 class Node:
   def __init__(self, data):
     self.data = data
     self.next = None
-
 class Queue:
   def __init__(self):
     self.front = None
     self.rear = None
     self.length = 0
 
-  def enqueue(self, element):
-    new_node = Node(element)
-    if self.rear is None:
-      self.front = self.rear = new_node
-      self.length += 1
-      return 
+  def enqueue(add, elem):
+    new_node = Node(elem)
+    if add.rear is None:
+      add.front = add.rear = new_node
+      add.length += 1
+      return
     
-    self.rear.next = new_node
-    self.rear = new_node
-    self.length += 1
+    add.rear.next = new_node
+    add.rear = new_node
+    add.length += 1
 
-  def dequeue(self):
-    if self.isEmpty():
-      return "Queue is empty"
-    temp = self.front
-    self.front = temp.next
-    self.length -= 1
-
-    if self.front is None:
-      self.rear = None
+  def dequeue(remove):
+    if remove.empty():
+      return "Queue is empty."
+    temp = remove.front
+    remove.front = temp.next
+    remove.length -= 1
+    if remove.rear is None:
+      remove.front = None
     return temp.data
   
-  def peek(self):
-    if self.isEmpty():
-      return "Queue is empty"
-    return self.front.data
+  def peek(top):
+    if top.empty():
+      return "Queue is empty."
+    return top.front.data
   
-  def isEmpty(self):
-    return self.length == 0
+  def empty(nothing):
+    return nothing.length == 0
   
-  def size(self):
-    return self.length
+  def size(leni):
+    return leni.length
   
-  def printQueue(self):
+  def printingQueue(self):
     temp = self.front
     while temp:
-      print(temp.data, end=" ")
+      print(temp.data, end="-")
       temp = temp.next
     print()
 
 
-thisQueue = Queue()
-
-thisQueue.enqueue('A')
-thisQueue.enqueue('B')
-thisQueue.enqueue('C')
+myQueue = Queue()
+temp = myQueue.enqueue(12)
+myQueue.enqueue(19)
+myQueue.enqueue(23)
+myQueue.enqueue(45)
 
 print("Queue: ", end="")
-thisQueue.printQueue()
+myQueue.printingQueue()
 
-print("Dequeue: ", thisQueue.dequeue())
-print("Peek: ", thisQueue.peek())
-print("Is Empty? : ", thisQueue.isEmpty())
-print("Size : ", thisQueue.size())
-
-
-      
+print(f"\n Size : {myQueue.size()}")
+print(f"\n Top : {myQueue.peek()}")
+print(f"\n Dequeue : {myQueue.dequeue()}")
