@@ -1,0 +1,19 @@
+
+
+HASH TABLE
+
+Is a data structure designed to be fast when working with.
+
+It implements searching, adding and deleting more faster even on large amounts of data.
+
+BUILDING HASH TABLES FROM START
+
+Steps:
+  1. Start with an array
+  2. Storing names using a hash functions.
+  3. Looking up for an element using a hash function.
+  4. Handling collisions.
+  5. The basic hash set code example and simulation.
+
+
+  START WITH AN ARRAY

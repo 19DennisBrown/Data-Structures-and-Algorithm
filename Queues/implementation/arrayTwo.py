@@ -1,28 +1,35 @@
 
 
-class Queue:
+class Kiu:
+  # Initialize  empty queue
   def __init__(self):
-    self.queue = []
-
-  def enqueue(self, element):
-    self.queue.append(element)
-  
-  def dequeue(self):
-    if self.isEmpty():
-      return "Present queue is empty"
-    return self.queue.pop(0)
-  
-  def peek(self):
-    if self.isEmpty():
+    self.kiu = []
+  # enqueue
+  def addKiu(add, elem):
+    add.kiu.append(elem)
+  # dequeue
+  def redusKiu(redus):
+    if redus.isEmpty():
+      return "Kiu is empty"
+    return redus.kiu.pop(0)
+  # first element
+  def peek(fast):
+    if fast.isEmpty():
       return "Queue is empty"
-    return self.queue[0]
-  
-  def isEmpty(self):
-    return len(self.queue) == 0
-  
-  def size(self):
-    return len(self.queue)
-  
-# Creating queue
-thisQueue = Queue()
+    return fast.kiu[0]
+  # check if empty
+  def isEmpty(empty):
+    return len(empty.kiu) == 0
+  # check size
+  def kiuSize(size):
+    return len(size.kiu)
+# creating new queue
+newKiu = Kiu()
+# adding elements
+elem1 = newKiu.addKiu('A')
+elem1 = newKiu.addKiu('Aw')
+elem1 = newKiu.addKiu('Ae')
 
+newKiu.redusKiu()
+print(f"First element in th queue is : {newKiu.peek()}")
+print(f"The length of kiu is : {newKiu.kiuSize()}")
